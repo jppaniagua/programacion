@@ -1,0 +1,34 @@
+//suma y operaciones
+//autor: Juan Pablo Paniagua 
+//fecha: 03/09/15
+
+
+#include <iostream> //libreria de entrada y salida cin, cout
+#include "conio.h" //libreria para manejar variables y getch
+using namespace std;  //declaracion de monitor y teclado
+int main()	//cuerpo princeipal
+{	
+int a; //variables
+int b; //variables
+int c; //variables
+int d; //variables
+int e; //variables
+float f;
+int g;
+cout <<"ingrese el primer numero"<< endl; //mensaje al usuario
+cin >> a;								  //ingresar valores
+cout <<"ingrese el segundo numer"<< endl; //mensaje al usuario
+cin >> b;								  //ingresar valores
+c = a+b;	//operaciones
+d = a-b;	//operaciones
+e = a*b;	//operaciones
+f = a/b;	//operaciones
+g = a%b;	//operaciones residuo
+cout <<"la suma; " << c << endl; //resultado
+cout <<"la resta es; " << d << endl; //resultado
+cout <<"la multiplicaciobn es; " << e << endl; //resultado
+cout <<"la division es; " << f << endl; //resultado
+cout <<"el rsiduo es; " << g << endl; //resultado
+getch(); //detiene la pantalla
+return 0;
+}
