@@ -6,8 +6,10 @@
 #include <iostream>  //libreria
 #include "conio.h"  //libreria
 
+//declara monitor y el teclado
 using namespace std;
 
+//cuerpo principal
 void main() 
 {
 	int A,B,C; //declaracion de variables
@@ -17,6 +19,7 @@ void main()
 	cin >>B;					//ingresar valores
 	C=(A*B)/2;					//resultado
 	cout <<"el resultado es: "<<C<<endl;  //mensaje al usuario
-	getch();
+	getch();  //detiene pantalla
 
 }
+//finaliza programa
