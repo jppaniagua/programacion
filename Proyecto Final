@@ -1,0 +1,403 @@
+// proyecto.cpp : Defines the entry point for the console application.
+// autores: Ana Maria Rivero, Javiera Alipaz, Juan Pablo Paniagua
+// fecha: 26/11/15
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <stdlib.h>
+
+
+void crearfactura (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20]);
+void productos (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20]);
+void pregunta (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20]);
+void cliente (char nombre[],char apellido[20]);
+void facturar (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20]);
+
+using namespace std;
+
+void main ()
+{int o,i=0,prod[100],cant[100];
+float prec[100],p1 [100];
+long double n=00000;
+char nombre [20],apellido[20];
+ do
+ {cout<<" ***** Mini Super *****\n\n";
+  cout<<" 1. Crear una factura. \n";
+  cout<<" 0. Salir. \n\n";
+  cout<<"Ingrese la opcion que desee:";
+  cin>>o;
+  switch (o)
+  case 1:
+  {crearfactura (i, cant, prod,prec,p1,n,nombre,apellido);
+  break;
+  }
+ }while (o!=0);
+
+}	
+void crearfactura (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20])
+{int op;
+   do
+   {system("cls");
+	cout<<"1. Ingresar nombre: \n";
+    cout<<"2. Ingresar Nit: \n";
+    cout<<"3. Factura. \n ";
+    cout<<"0. Atras. \n";
+    cout<<"Ingrese la opcion que desee: ";
+    cin>>op;
+    switch (op)
+	{case 1:
+     cliente(nombre,apellido);
+	 break;
+	 case 2:
+	 system("cls");
+	 cout<<"Ingrese el numero de carnet o NIT del cliente: ";
+     cin>>n;
+	 break;
+	 case 3:
+	 productos(i,cant,prod,prec,p1,n,nombre,apellido);
+     break;
+	}
+   }while(op!=0);
+}
+void cliente (char nombre[20],char apellido[20])
+{
+	system("cls");
+   cout<<"Ingrese el apellido del cliente: ";
+	cin>>apellido;
+	system("cls");
+   cout<<"Ingrese el nombre del cliente: ";
+	cin>>nombre;
+
+}
+void facturar (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20])
+{int c,j,s=0;
+cout<<"			Lolly's				\n"<<"Sucursal 2				Santa Cruz\n"<<"Av. Alemania #332			Telf.3658214\n";
+cout<<"-----------------------------------------------------\n";
+cout<<"Nit:1015447027		      Autorizacion:7904001491\n";
+cout<<"Factura No: 93285\n";
+cout<<"-----------------------------------------------------\n";
+cout<<"Nombre:"<<nombre<<" "<<apellido;
+cout<<"\nNIT/CI:"<<n<<"\n";
+cout<<"-----------------------------------------------------\n";
+ cout<<"Cantidad	Producto	P/U		Ptot \n";
+ for(c=1;c<=i;c++)
+ { cout<<cant[c]<<"	";
+  if(prod[c]==1)
+ cout<<"	Doblon		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==2)
+ cout<<"	Coco		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==3)
+ cout<<"	Nutella		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==4)
+ cout<<"	Frutilla	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==5)
+ cout<<"	Tamarindo	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==6)
+ cout<<"	Oreo		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==7)
+ cout<<"	Maracuya	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==8)
+ cout<<"	Tiramisu	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==9)
+ cout<<"	Manzana		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==10)
+ cout<<"	Pistacho	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==11)
+ cout<<"	Mora		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==12)
+ cout<<"	Chirimoya	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==13)
+ cout<<"	Pie de limon	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==14)
+ cout<<"	Choco menta		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==15)
+ cout<<"	Canela		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==16)
+ cout<<"	Arroz con leche	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==17)
+ cout<<"	Pinha colada	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==18)
+ cout<<"	Choco torta	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==19)
+ cout<<"	Mango		"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  if(prod[c]==20)
+ cout<<"	Banana split	"<<prec[c]<<" Bs.		"<<p1[c]<<" Bs.\n";
+  s=s+p1[c];
+ }
+ cout<<"-----------------------------------------------------\n";
+ cout<<"				TOTAL A PAGAR:	"<<s<<"Bs.";;;
+ getch();
+}
+void pregunta (int &i, int cant[], int prod[], float prec [],float p1[],long double &n,char nombre[50],char apellido[20])
+{int opcio;
+ cout<<"1. Agregar otro producto. \n";
+ cout<<"2. Facturar. \n\n ";
+ cout<<"Ingresar la opcion que desee: ";
+ cin>>opcio;
+ switch(opcio)
+ {case 1:
+  {system("cls");
+   productos(i,cant,prod,prec,p1,n,nombre,apellido);
+   break;
+  }
+   case 2:
+  {system("cls");
+   facturar(i,cant,prod,prec,p1,n,nombre,apellido);
+  break;
+  }
+ }
+}
+void productos (int &i, int cant[], int prod[], float prec [],float p1[],long double &n, char nombre[50],char apellido[20])
+{int opc;
+ do
+	  {system("cls");
+	   cout<<"Sabores: \n";
+       cout<<"1. Doblon.\n";
+	   cout<<"2. Coco.\n";
+	   cout<<"3. Nutella.\n";
+	   cout<<"4. Frutilla.\n";
+	   cout<<"5. Tamarindo.\n";
+	   cout<<"6. Oreo.\n";
+	   cout<<"7. Maracuya.\n";
+	   cout<<"8. Tiramisu.\n";
+	   cout<<"9. Manzana.\n";
+	   cout<<"10. Pistacho.\n";
+	   cout<<"11. Mora.\n";
+	   cout<<"12. Chirimoya.\n";
+	   cout<<"13. Pie de limon.\n";
+	   cout<<"14. Choco menta.\n";
+	   cout<<"15. Canela.\n";
+	   cout<<"16. Arroz con leche.\n";
+	   cout<<"17. Pinha colada.\n";
+	   cout<<"18. Choco torta.\n";
+	   cout<<"19. Mango.\n";
+	   cout<<"20. Banana split.\n";
+       cout<<"0. Atras. \n";
+       cout<<"Ingrese la opcion que desee: ";
+       cin>>opc;
+       switch (opc)
+	   {case 1:
+	    {i=i+1;
+		 prod[i]=1;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 2:
+	    {i=i+1;
+		 prod[i]=2;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 3:
+	    {i=i+1;
+		 prod[i]=3;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=9;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 4:
+	    {i=i+1;
+		 prod[i]=4;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 5:
+	    {i=i+1;
+		 prod[i]=5;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 6:
+	    {i=i+1;
+		 prod[i]=6;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=14;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 7:
+	    {i=i+1;
+		 prod[i]=7;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 8:
+	    {i=i+1;
+		 prod[i]=8;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 9:
+	    {i=i+1;
+		 prod[i]=9;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 10:
+	    {i=i+1;
+		 prod[i]=10;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 11:
+	    {i=i+1;
+		 prod[i]=11;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 12:
+	    {i=i+1;
+		 prod[i]=12;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=11;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 13:
+	    {i=i+1;
+		 prod[i]=13;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 14:
+	    {i=i+1;
+		 prod[i]=14;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 15:
+	    {i=i+1;
+		 prod[i]=15;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 16:
+	    {i=i+1;
+		 prod[i]=16;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=15;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 17:
+	    {i=i+1;
+		 prod[i]=17;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=10;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 18:
+	    {i=i+1;
+		 prod[i]=18;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=12;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 19:
+	    {i=i+1;
+		 prod[i]=19;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=9;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+		case 20:
+	    {i=i+1;
+		 prod[i]=20;
+		 cout<<"Ingrese la cantidad: ";
+		 cin>>cant[i];
+		 prec[i]=13;
+		 p1[i]=cant[i]*prec[i];
+		 system("cls");
+		 pregunta(i,cant,prod,prec,p1,n,nombre,apellido);
+		 break;
+		}
+	   }
+	  }while(opc!=0);
+	 
+	 }
